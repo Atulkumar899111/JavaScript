@@ -9,20 +9,13 @@
             <h1 id="hedding">Add Two Number</h1>
             <form>
                 <label id="lable">Num1:</label><br>
-                <input type="text" id="num1"><br>
+                <input type="number" id="num1"><br>
                 <label id="lable">Num2:</label><br>
-                <input type="text" id="num2"><br><br>
+                <input type="number" id="num2"><br><br>
                 <button type="button" id="button" onclick="add()">Calculate</button>
               </form>  
             <p id="result">Click on Calculate</p>
         </div>
-        <script>
-            function add(){
-            let num1 = Number(document.getElementById("num1").value);
-            let num2 = Number(document.getElementById("num2").value);
-            let sum = num1+num2
-            document.getElementById("result").innerHTML = `Answer is ${sum}`;
-            }
-        </script>
+        <script src="script.js"></script>
     </body>
 </html>
