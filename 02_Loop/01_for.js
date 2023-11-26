@@ -17,6 +17,22 @@
 //     console.log(gree);
 // }
 
+let obj = {
+    Firstname : "Atul",
+    Lastname: "Kumar",
+    Date_of_birth : "11/11/1998"    
+}
+
+// for (const [key, value] of obj) {
+//     console.log(key,` : `,value);
+// }
+
+for (const key in obj) {
+    console.log(obj[key]);
+}
+
+
+
 
 let arr2 = ["Mac","Win","Android"]
 
@@ -30,6 +46,38 @@ for (const key in arr2) {
 //foreach loop 
 
 arr2.forEach((value)=>{console.log(value)});
+arr2.forEach((value,num,ar)=>console.log(value,num,ar));
+
+
+// obj.forEach((item)=>console.log(item));
+
+
+
+
+const response = [
+    {
+        username : "Atul",
+        age :25
+    },
+    {
+        username : "Garima",
+        age :29
+    },
+    {
+        username : "Tripti",
+        age :30
+    }
+]
+
+
+
+
+response.forEach((value)=>console.log(value.username));
+
+
+let output = arr2.filter((item)=>(item.includes("i")))
+
+console.log(output);
 
 
 
