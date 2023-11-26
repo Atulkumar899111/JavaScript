@@ -22,8 +22,8 @@ let arr2 = ["Mac","Win","Android"]
 
 // for in loop
 
-for (const [key , value] in arr2) {
-    console.log(value);
+for (const key in arr2) {
+    console.log(arr2[key]);
 }
 
 
