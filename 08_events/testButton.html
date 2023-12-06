@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="mainHeading">Atul Chaudhary</h1>
+    <button id="startButton">Start</button>
+    <button id="stopButton">Stop</button>
+    <script>
+        let settime;
+        const saydate = function (){
+            console.log("Started", Date.now())
+        }
+        const startButton = function(){
+            if(!settime){
+             settime =  setInterval(saydate,1000)
+            }
+        }
+
+        document.querySelector("#startButton").addEventListener("click",startButton)
+
+        document.querySelector("#stopButton").addEventListener('click',()=>{
+            console.log("Stop");
+            clearInterval(settime)
+            settime = null;
+        })
+    </script>
+</body>
+</html>
