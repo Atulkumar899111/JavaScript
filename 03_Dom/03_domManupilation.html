@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body style="background-color: #212121; color: #fff; ">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+    <div class="language1"></div>
+    <div class="language2"></div>
+    <script>
+        let addLanguage = (langName)=>{
+            const li = document.createElement('li')
+            li.innerHTML = `${langName}`
+            document.querySelector(`.language`).appendChild(li)
+        }
+
+        addLanguage("java")
+
+        let addLanguageOpti = (langName)=>{
+            const li = document.createElement("li")
+            li.appendChild(document.createTextNode(langName))
+            document.querySelector('.language').appendChild(li)
+        }
+
+        addLanguage("python")
+        addLanguageOpti("c++")
+
+        // Edit
+        const secondLanguage = document.querySelector("li:nth-child(2)")
+        // secondLanguage.innerHTML = "mojo"
+        const newLi = document.createElement("li")
+        newLi.textContent = "Mojo"
+        secondLanguage.replaceWith(newLi)
+
+
+        const thirdLanguage = document.querySelector("li:nth-child(3)")
+        thirdLanguage.textContent = "CSS"
+        thirdLanguage.replaceWith(thirdLanguage)
+
+
+
+        // let newText = document.createElement('h1') 
+        // newText.appendChild(document.createTextNode("Atul Chaudhary"))
+        // document.querySelector(".language1").appendChild(newText)
+
+    
+
+        const addText = (name,type)=>{
+            let newText = document.createElement(type)
+            newText.appendChild(document.createTextNode(name))
+            document.querySelector(".language2").appendChild(newText)
+        }
+        addText("Basti","h2")
+        addText("Basti","h1")
+        addText("Basti","p")
+
+
+        const editText = document.querySelector("li:nth-child(2)")
+        const addtext2 = document.createElement("h2")
+        addtext2.textContent = "Atul"
+        editText.replaceWith(addtext2)
+
+        //remove
+        const editText2 = document.querySelector("li:nth-child(4)")
+        editText2.remove()
+    </script>
+</body>
+</html>

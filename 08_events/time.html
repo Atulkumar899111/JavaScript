@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="mainHeading">Atul Chaudhary</h1>
+    <button id="submit">Submit</button>
+    <script>
+        const heding = document.querySelector("#mainHeading")
+        const changeText = function (){
+            heding.innerHTML = "Welcome back"
+        }
+        
+        const changeMe =  setTimeout(changeText,2000)
+
+       const button = document.querySelector('#submit')
+       button.addEventListener('click',function(){
+            clearTimeout(changeMe)
+            console.log("Stopped");
+        })
+        
+
+    </script>
+</body>
+</html>

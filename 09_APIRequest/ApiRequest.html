@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hit the api</h1>
+    <button id="sendAPI">Send API</button>
+
+    <div id="userInfo"></div>
+    <img src="" alt="">
+    <script>
+        let response;
+
+        const addUserInfo = (type,value)=>{
+            let para;
+            let user = document.getElementById("userInfo")
+            if(type === 'img'){
+                para = document.createElement(type)
+                para.src = value
+            }else{
+                para = document.createElement(type)
+                para.textContent = value
+            }
+                user.appendChild(para)
+        }
+
+
+
+        const hitApi = ()=>{
+            const requestURL = 'https://api.github.com/users/hiteshchaudhary'
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET',requestURL)
+            xhr.onreadystatechange = function(){
+            console.log(xhr.readyState)
+                if (xhr.readyState === 4){
+                    response = JSON.parse (this.responseText)
+                    addUserInfo('h1',`${response.login}`);   
+                    addUserInfo('img',`${response.avatar_url}`)
+                    console.log(response.login);
+            
+                    
+                    
+                }
+            }
+            xhr.send()
+
+            
+        }
+
+        document.querySelector('#sendAPI').addEventListener('click',hitApi)
+
+
+        
+
+        
+        
+        
+
+    </script>
+</body>
+</html>

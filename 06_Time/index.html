@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Time</h1>
+    <div id="clock"></div>
+</body>
+<script>
+    // const time = document.getElementById("clock")
+    const time = document.querySelector("#clock")
+
+    
+    setInterval(function (){
+        const date = new Date();
+        // console.log(date.toLocaleTimeString())
+    // const addTime = document.createElement("p")
+    // addTime.textContent = date.toLocaleTimeString();
+    // time.replaceWith(addTime)
+    time.innerHTML = date.toLocaleTimeString(); 
+    }, 1000)
+
+</script>
+</html>
