@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="todo">To Do</h1>
+    <button id="newTask">New Task</button>
+    <div id="addNewTask"></div>
+
+    <div id="addNewTaskSection" style="visibility: hidden;">
+        <h1 id="addNewTask">Add New Task</h1>
+        <input type="text" id="taskName">
+        <button id="addinArray">Add</button>
+    </div>
+
+    <div id="completeList">
+
+    </div>
+
+
+
+
+
+
+    <script>
+        const todo = document.querySelector('#todo')
+        const newTask = document.querySelector('#newTask')
+        const addNewTask = document.querySelector('#addNewTask')
+        const addNewTaskSection = document.querySelector('#addNewTaskSection')
+        const taskName = document.querySelector('#taskName')
+        const completeList = document.querySelector('#completeList')
+        let addListArray = []
+        let realValue;
+
+        const addApara = ()=> {
+            completeList.innerHTML = '';
+            addListArray.forEach((list1) => {
+                const para = document.createElement("p")
+                para.innerHTML = list1;
+                completeList.appendChild(para)
+            })
+        }
+
+
+        newTask.addEventListener('click', (e) => {
+            addNewTaskSection.style.visibility = "visible";
+            // addApara()
+            document.querySelector('#addinArray').addEventListener('click', (list) => {
+                
+                realValue = taskName.value
+                addListArray.push(realValue)
+                realValue = ""
+                console.log(addListArray)
+                addApara()
+                // addNewTaskSection.style.visibility = "hidden";
+            })
+            console.log('exit')
+        })
+    </script>
+</body>
+
+</html>

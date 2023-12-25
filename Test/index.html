@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <input id="search" type="text" placeholder="Search">
+    <ul id="list">
+        <li>java</li>
+        <li>javaScript</li>
+        <li>Array</li>
+        <li>object</li>
+        <li>Sql</li>
+        <li>Go</li>
+    </ul>
+<body>
+    <script>
+        const search = document.querySelector("#search")
+        
+        let list = document.querySelectorAll("#list")
+        let searchText = "";
+        let checkValue = " ";
+
+        let arr =[]
+
+
+        let arr2 = [1,2,3,4,5,6,7]
+
+        arr2.forEach(function(item){
+            
+        })
+        
+        
+
+
+        // console.log(list);
+        search.addEventListener("input",(e)=>{
+            // if(e.data){
+            // searchText = searchText + e.data
+            // }else{
+            //     searchText = searchText.slice(0, -1)
+                // console.log(searchText)
+            // }
+
+            searchText = e.target.value
+            console.log(searchText)
+            list.forEach(item=>{
+                if(!item.textContent.toLowerCase().includes(searchText)){
+                    item.style.display = "none"
+                    
+                    console.log("false");
+                }else{
+                    item.style.display = "list-item"
+                    console.log("True");
+                    console.log(item.textContent)
+                }
+            })
+            
+                // console.log(checkValue.match(new RegExp(searchText)) !== null)
+                // console.log(item.innerHTML);
+                // console.log(searchText)
+
+                
+                // if(checkValue.includes(searchText)){
+                //     console.log(true)
+                // }else{
+                //     console.log(false);
+                // }
+        })
+
+    </script>
+</body>
+</html>

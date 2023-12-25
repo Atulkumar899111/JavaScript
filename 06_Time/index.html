@@ -7,11 +7,13 @@
 </head>
 <body>
     <h1>Time</h1>
+    <div id="date"></div>
     <div id="clock"></div>
 </body>
 <script>
     // const time = document.getElementById("clock")
     const time = document.querySelector("#clock")
+    const date1 = document.querySelector("#date")
 
     
     setInterval(function (){
@@ -20,8 +22,10 @@
     // const addTime = document.createElement("p")
     // addTime.textContent = date.toLocaleTimeString();
     // time.replaceWith(addTime)
-    time.innerHTML = date.toLocaleTimeString(); 
+    
+    date1.innerHTML = `${date.getUTCFullYear()} / ${date.getMonth()} / ${date.getDate()}`;
+    time.innerHTML = date.toLocaleTimeString();
+    
     }, 1000)
-
 </script>
 </html>
