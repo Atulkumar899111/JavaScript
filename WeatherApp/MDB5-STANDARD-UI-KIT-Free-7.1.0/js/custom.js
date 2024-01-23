@@ -24,7 +24,7 @@ searchButton.addEventListener('click',(e)=>{
             cityValue.innerHTML = city.toUpperCase();
             feelsLike.innerHTML = result.feels_like
             windSpeed.innerHTML = result.wind_speed
-            temp.innerHTML = result.temp
+            temp.innerHTML = result.temp + "°C"
             console.log(temp);
         } catch (error) {
             console.error(error);

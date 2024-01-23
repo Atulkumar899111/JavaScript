@@ -43,6 +43,10 @@
                 const para = document.createElement("p")
                 para.innerHTML = list1;
                 completeList.appendChild(para)
+                const button = document.createElement("button")
+                button.name = list1
+                button.textContent = "delete"
+                completeList.appendChild(button)
             })
         }
 
@@ -50,17 +54,17 @@
         newTask.addEventListener('click', (e) => {
             addNewTaskSection.style.visibility = "visible";
             // addApara()
-            document.querySelector('#addinArray').addEventListener('click', (list) => {
-                
+            console.log('exit')
+        })
+
+        document.querySelector('#addinArray').addEventListener('click', (list) => {
                 realValue = taskName.value
                 addListArray.push(realValue)
                 realValue = ""
                 console.log(addListArray)
                 addApara()
-                // addNewTaskSection.style.visibility = "hidden";
+                addNewTaskSection.style.visibility = "hidden";
             })
-            console.log('exit')
-        })
     </script>
 </body>
 
